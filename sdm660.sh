@@ -2,7 +2,7 @@ starttime=`date +'%Y-%m-%d %H:%M:%S'`
 
 git submodule update --init --recursive
 export PATH=/home/lu/clang/bin:${PATH}
-make O=out ARCH=arm64 clover-perf_defconfig -j$(nproc --all) LLVM=1
+make O=out ARCH=arm64 clover_defconfig -j$(nproc --all) LLVM=1
 make LLVM=1 -j$(nproc --all) O=out \ARCH=arm64 \CC=/home/lu/clang/bin/clang \
 	CROSS_COMPILE=/home/lu/clang/bin/aarch64-linux-gnu- \
 	CROSS_COMPILE_ARM32=/home/lu/clang/bin/arm-linux-gnueabi- \
